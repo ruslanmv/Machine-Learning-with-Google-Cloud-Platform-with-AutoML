@@ -60,12 +60,10 @@ In **Vertex AI**, you can create managed datasets for a variety of data types. Y
 
    ![](assets/images/posts/README/5.jpg)
 
-2. Click **Create dataset**.
-
-   1. For **Dataset name**, type a name like `fraud_detection`.
+2. Click **Create dataset**. For **Dataset name**, type a name like `fraud_detection`.
 
 
-### Types of Machine Learning Models for VertexAI
+## Types of Machine Learning Models for VertexAI
 
 There are different machine learning models that can be **handled by Google Cloud Platform**, 
 
@@ -106,11 +104,11 @@ There are different machine learning models that can be **handled by Google Clou
 
 ![](assets/images/posts/README/5e.jpg)
 
-
-
-
-
 Depending  the type of data of your dataset will contain. Then we need  to select an objective, which is the outcome that you want to achieve with the trained mode
+
+
+
+## Step 4. Selection of the Machine Learning case
 
 For this blog post project we choose the the **Tabular** data type, and then select **Regression/classification**.
 
@@ -120,7 +118,7 @@ and we click **Create**.
 
 
 
-### Step 4. Import data from BigQuery
+### Step 5. Import data from BigQuery
 
 In the created dataset, there are a few options for importing data to managed datasets in Vertex. 
 
@@ -138,15 +136,13 @@ For this lab you will upload data from a public BigQuery table.
 
    ![](assets/images/posts/README/8.jpg)
 
-2. For the BigQuery path, add the following:
+   For the BigQuery path, add the following:
 
 ```
 bigquery-public-data.ml_datasets.ulb_fraud_detection
 ```
 
 then Click **Continue**.
-
-
 
 Your result should look similar to this image:
 
@@ -158,7 +154,7 @@ Your result should look similar to this image:
 
 To see additional information about this dataset, click **Generate statistics**. This dataset contains real credit card transactions. Most of the column names have been obscured, which is why they are called *V1*, *V2*, etc.
 
-## Step 5. Train a model with AutoML
+## Step 6. Train a model with AutoML
 
 With a managed dataset uploaded, you are ready to train a model with this data. You will train a classification model to predict whether a specific transaction is fraudulent. Vertex AI gives you two options for training models:
 
@@ -204,9 +200,11 @@ Training will take slightly longer than two hours to account for time to spin up
 
 If you want to spend money you can click Click **Start training**.
 
+
+
 ![](assets/images/posts/README/14.jpg)
 
-##  Vertex AI  Models
+##  Step 7. Vertex AI  Models
 
 Once the model has been successfully trained, you can see a custom trained model if you head to **Vertex AI** ➞ **Models**
 
@@ -239,7 +237,7 @@ To view the details of the endpoint that is currently deploying, you can simply 
 
 Once deployment is successfull, you should be able to see a green tick next to the endpoint name 
 
-## Step 8 Make an online prediction request
+## Step 8 Make a prediction request
 
 Send an online prediction request to your deployed model.
 
@@ -265,8 +263,6 @@ Add a cell in your notebook to print the prediction results:
 print(response.json())
 ```
 
-
-
 ## Step 9 Cleaning up
 
 To clean up all Google Cloud resources used in this project, you can [delete the Google Cloud project](https://cloud.google.com/resource-manager/docs/creating-managing-projects#shutting_down_projects) you used for the tutorial.
@@ -285,3 +281,6 @@ To remove the endpoint, click the overflow menu.![View more](assets/images/posts
 
 To delete the Cloud Storage bucket, on the **Cloud Storage** page, select your bucket, and then click **Delete**.
 
+
+
+**Congratulations!**   You have used Vertex AI to train and serve a model with tabular data. You have build a fraud detection model to determine whether a particular credit card transaction should be classified as fraudulent.
